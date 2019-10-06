@@ -720,5 +720,6 @@
 		<string name="sha2_chk">Use SHA2 for hashing</string>
 		<string name="unable_set_boot_slot">Error changing bootloader boot slot to {1}</string>
 		<string name="active_slot_install">Install in the active slot</string>
+		<string name="remount_system_rw">[i] Remounted system as R/W!</string>
 	</resources>
 </language>
