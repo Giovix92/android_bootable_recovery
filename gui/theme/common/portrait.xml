@@ -185,7 +185,7 @@
 			<text style="text_m">
 				<condition var1="tw_no_cpu_temp" var2="0"/>
 				<placement x="%col1_x_header%" y="%row4_header_y%"/>
-				<text>%tw_version%</text>
+				<text>%tw_version% brought you by Giovix92</text>
 			</text>
 
 			<button style="main_button">
@@ -487,6 +487,11 @@
 			</text>
 
 			<template name="console"/>
+
+			<action>
+				<action function="set">tw_active_slot_install=0</action>
+				<action function="set">tw_inject_after_zip=0</action>
+			</action>
 
 			<button style="main_button_half_height">
 				<condition var1="tw_ab_device" var2="0"/>
@@ -4088,6 +4093,19 @@
 						<action function="flash">flash_zip</action>
 					</actions>
 				</listitem>
+				<listitem name="{@adbgodmode=Enable ADB God Mode}">
+					<actions>
+						<action function="set">tw_back=tissotmanager</action>
+						<action function="queueclear"/>
+						<action function="cmd">
+							echo "lol" > /tmp/dogodmode
+							echo "/tissot_manager/installer.sh" > /tmp/flash_proxy_command
+						</action>
+						<action function="set">tw_filename=/tissot_manager/flash_proxy.zip</action>
+						<action function="queuezip"/>
+						<action function="flash">flash_zip</action>
+					</actions>
+				</listitem>
 				<listitem name="{@credits=Credits}">
 					<action function="page">creditstm</action>
 				</listitem>
@@ -4105,7 +4123,7 @@
 
 		</page>
 
-		<!--page name="creditstm">
+		<page name="creditstm">
 			<template name="page"/>
 
 			<text style="text_l">
@@ -4158,7 +4176,7 @@
 			<action function="page">main</action>
 		</action>
 
-		</page-->
+		</page>
 
 		<page name="enabletrebledata">
 			<template name="page"/>

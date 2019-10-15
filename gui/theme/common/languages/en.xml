@@ -747,7 +747,7 @@
 		<string name="disclaimer_two">that YOU may do in this tool. Me (Giovix92), nor any other</string>
 		<string name="disclaimer_three">person involved in this project is responsible for any type of</string>
 		<string name="disclaimer_four">damage that YOU may cause to your device.</string>
-		<string name="changelogtm">Changelog</string>
+		<string name="credits">Credits</string>
 		<string name="treble_l_credits">Tissot Manager - Credits</string>
 		<string name="treble_m_credits">Credits of Tissot Manager</string>
 		<string name="treble_l_changelog">Tissot Manager - Changelog</string>
@@ -758,5 +758,6 @@
 		<string name="credits_four">and other random stuff: Flex, nicknitewold for his original twrp...</string>
 		<string name="credits_five">Special thanks to @ChonDoe, who helped me</string>
 		<string name="credits_six">in testing this recovery, and for being always present.</string>
+		<string name="adbgodmode">Enable ADB God Mode</string>
 	</resources>
 </language>
