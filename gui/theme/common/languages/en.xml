@@ -721,5 +721,42 @@
 		<string name="unable_set_boot_slot">Error changing bootloader boot slot to {1}</string>
 		<string name="active_slot_install">Install in the active slot</string>
 		<string name="remount_system_rw">[i] Remounted system as R/W!</string>
+		<!-- Custom Tissot Manager Values -->
+		<!-- Custom values -->
+		<string name="tissot_manager">Tissot Manager</string>
+		<string name="treble_l">Tissot Manager</string>
+		<string name="treble_m">This allows you to enable/disable treble and other things.</string>
+		<string name="enable_treble">Enable Treble</string>
+		<string name="disable_treble">Disable Treble</string>
+		<string name="selinux_switch">Make SELinux Enforcing/Permissive</string>
+		<string name="treble_execute">Executing...</string>
+		<string name="treble_warning">You will lose all files on your internal memory!</string>
+		<string name="treble_warning_two">This action cannot be undone!</string>
+		<string name="treble_warning_three">Please, take a full backup of your data on your pc before proceeding!</string>
+		<string name="treble_warning_four">Type yes to continue.</string>
+		<string name="treble_enable_complete">Enabled successfully!</string>
+		<string name="treble_remove_complete">Removed successfully!</string>
+		<string name="treble_m_enable">This allows you to enable treble.</string>
+		<string name="treble_m_disable">This allows you to remove treble.</string>
+		<string name="treble_l_disable">Tissot Manager - Remove treble</string>
+		<string name="treble_l_enable">Tissot Manager - Enable treble</string>
+		<string name="swipe_to_execute">Swipe to execute</string>
+		<string name="treble_l_disclaimer">Tissot Manager - Disclaimer</string>
+		<string name="treble_m_disclaimer">Disclaimer of Tissot Manager.</string>
+		<string name="disclaimer_one">If you slide that button, you'll be responsible for all the actions</string>
+		<string name="disclaimer_two">that YOU may do in this tool. Me (Giovix92), nor any other</string>
+		<string name="disclaimer_three">person involved in this project is responsible for any type of</string>
+		<string name="disclaimer_four">damage that YOU may cause to your device.</string>
+		<string name="changelogtm">Changelog</string>
+		<string name="treble_l_credits">Tissot Manager - Credits</string>
+		<string name="treble_m_credits">Credits of Tissot Manager</string>
+		<string name="treble_l_changelog">Tissot Manager - Changelog</string>
+		<string name="treble_m_changelog">Changelog of Tissot Manager</string>
+		<string name="credits_one">Huge thanks to CosmicDan, who let me (Giovix92)</string>
+		<string name="credits_two">the permission to update this awesome project.</string>
+		<string name="credits_three">Also thanks to who helped me in this project</string>
+		<string name="credits_four">and other random stuff: Flex, nicknitewold for his original twrp...</string>
+		<string name="credits_five">Special thanks to @ChonDoe, who helped me</string>
+		<string name="credits_six">in testing this recovery, and for being always present.</string>
 	</resources>
 </language>

@@ -3594,6 +3594,11 @@
 						<action function="page">confirm_action</action>
 					</actions>
 				</listitem>
+				<listitem name="{@tissot_manager=Tissot Manager}">
+					<actions>
+						<action function="page">tissotmanagerdisclaimer</action>
+					</actions>
+				</listitem>
 			</listbox>
 
 			<action>
@@ -3988,6 +3993,309 @@
 				<touch key="home"/>
 				<action function="page">main</action>
 			</action>
+		</page>
+		
+		<page name="tissotmanagerdisclaimer">
+			<template name="page"/>
+
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@treble_l_disclaimer=Tissot Manager - Disclaimer}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@treble_m_disclaimer=Disclaimer of Tissot Manager.}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row2_y%" placement="5"/>
+				<text>{@disclaimer_one=If you slide that button, you'll be responsible for all the actions}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row3_y%" placement="5"/>
+				<text>{@disclaimer_two=that YOU may do in this tool. Me (Giovix92), nor any other}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row4_y%" placement="5"/>
+				<text>{@disclaimer_three=person involved in this project is responsible for any type of}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row5_y%" placement="5"/>
+				<text>{@disclaimer_four=damage that YOU may cause to your device. }</text>
+			</text>
+
+			<slider>
+				<text>{@swipe_to_execute=Swipe to execute}</text>
+				<actions>
+					<action function="set">tw_back=advanced</action>
+					<action function="page">tissotmanager</action>
+				</actions>
+			</slider>
+
+			<action>
+	        <touch key="back"/>
+	        <action function="page">advanced</action>
+			</action>
+
+			<action>
+	        <touch key="home"/>
+	        <action function="page">main</action>
+			</action>
+
+		</page>
+
+		<page name="tissotmanager">
+			<template name="page"/>
+
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@treble_l=Tissot Manager}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@treble_m=This allows you to enable/disable treble and other things.}</text>
+			</text>
+
+			<button style="main_button">
+				<placement x="%indent%" y="%row2a_y%"/>
+				<text>{@enable_treble=Enable Treble}</text>
+				<action function="page">enabletrebledata</action>
+			</button>
+
+			<button style="main_button">
+				<placement x="%center_x%" y="%row2a_y%"/>
+				<text>{@disable_treble=Remove Treble}</text>
+				<action function="page">removetrebledata</action>
+			</button>
+
+			<listbox style="advanced_listbox">
+				<placement x="%indent%" y="%row8_y%" w="%content_width%" h="960"/>
+				<listitem name="{@selinux_switch=Make SELinux Enforcing/Permissive}">
+					<actions>
+						<action function="set">tw_back=tissotmanager</action>
+						<action function="queueclear"/>
+						<action function="cmd">
+							echo "lol" > /tmp/doselinux
+							echo "/tissot_manager/installer.sh" > /tmp/flash_proxy_command
+						</action>
+						<action function="set">tw_filename=/tissot_manager/flash_proxy.zip</action>
+						<action function="queuezip"/>
+						<action function="flash">flash_zip</action>
+					</actions>
+				</listitem>
+				<listitem name="{@credits=Credits}">
+					<action function="page">creditstm</action>
+				</listitem>
+			</listbox>
+
+		<action>
+			<touch key="back"/>
+			<action function="page">advanced</action>
+		</action>
+
+		<action>
+			<touch key="home"/>
+			<action function="page">main</action>
+		</action>
+
+		</page>
+
+		<!--page name="creditstm">
+			<template name="page"/>
+
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@treble_l_credits=Tissot Manager - Credits}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@treble_m_credits=Credits of Tissot Manager}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row2_y%" placement="5"/>
+				<text>{@credits_one=Huge thanks to CosmicDan, who let me (Giovix92)}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row3_y%" placement="5"/>
+				<text>{@credits_two=the permission to update this awesome project.}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row4_y%" placement="5"/>
+				<text>{@credits_three=Also thanks to who helped me in this project}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row5_y%" placement="5"/>
+				<text>{@credits_four=and other random stuff: Flex, nicknitewold for his original twrp...}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row7_y%" placement="5"/>
+				<text>{@credits_five=Special thanks to @ChonDoe, who helped me}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row8_y%" placement="5"/>
+				<text>{@credits_six=in testing this recovery, and for being always present.}</text>
+			</text>
+
+		<action>
+			<touch key="back"/>
+			<action function="page">tissotmanager</action>
+		</action>
+
+		<action>
+			<touch key="home"/>
+			<action function="page">main</action>
+		</action>
+
+		</page-->
+
+		<page name="enabletrebledata">
+			<template name="page"/>
+
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@treble_l_enable=Tissot Manager - Enable treble}</text>
+			</text>
+	
+			<text style="text_m">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@treble_m_enable=This allows you to enable treble.}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row2_y%" placement="5"/>
+				<text>{@treble_warning=You will lose all files on your internal memory!}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row3_y%" placement="5"/>
+				<text>{@treble_warning_two=This action cannot be undone!}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row4_y%" placement="5"/>
+				<text>{@treble_warning_three=Please, take a full backup of your data on your pc before proceeding!}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row5_y%" placement="5"/>
+				<text>{@treble_warning_four=Type yes to continue.}</text>
+			</text>
+
+			<input>
+				<placement x="%indent%" y="%row10_y%" w="%content_width%" h="%input_height%"/>
+				<text>%tw_confirm_formatdata%</text>
+				<data name="tw_confirm_formatdata"/>
+				<restrict minlen="3" maxlen="3" allow="yes"/>
+				<actions>
+					<action function="set">tw_back=tissotmanager</action>
+					<action function="queueclear"/>
+					<action function="cmd">
+					  echo "lol" > /tmp/dotrebledata
+					  echo "/tissot_manager/installer.sh" > /tmp/flash_proxy_command
+					</action>
+					<action function="set">tw_filename=/tissot_manager/flash_proxy.zip</action>
+					<action function="queuezip"/>
+					<action function="flash">flash_zip</action>
+				</actions>
+			</input>
+
+			<fill color="%accent_color%">
+				<placement x="%indent%" y="row11_y" w="%content_width%" h="input_line_width"/>
+			</fill>
+
+			<template name="keyboardtemplate"/>
+
+		<action>
+			<touch key="back"/>
+			<action function="page">tissotmanager</action>
+		</action>
+
+		<action>
+			<touch key="home"/>
+			<action function="page">main</action>
+		</action>
+
+		</page>
+
+		<page name="removetrebledata">
+			<template name="page"/>
+
+			<text style="text_l">
+				<placement x="%col1_x_header%" y="%row3_header_y%"/>
+				<text>{@treble_l_disable=Tissot Manager - Remove treble}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%col1_x_header%" y="%row4_header_y%"/>
+				<text>{@treble_m_disable=This allows you to remove treble.}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row2_y%" placement="5"/>
+				<text>{@treble_warning=You will lose all files on your internal memory!}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row3_y%" placement="5"/>
+				<text>{@treble_warning_two=This action cannot be undone!}</text>
+			</text>
+
+			<text style="text_m_fail">
+				<placement x="%center_x%" y="%row4_y%" placement="5"/>
+				<text>{@treble_warning_three=Please, take a full backup of your data on your pc before proceeding!}</text>
+			</text>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row5_y%" placement="5"/>
+				<text>{@treble_warning_four=Type yes to continue.}</text>
+			</text>
+
+			<input>
+				<placement x="%indent%" y="%row10_y%" w="%content_width%" h="%input_height%"/>
+				<text>%tw_confirm_formatdata%</text>
+				<data name="tw_confirm_formatdata"/>
+				<restrict minlen="3" maxlen="3" allow="yes"/>
+				<actions>
+					<action function="set">tw_back=tissotmanager</action>
+					<action function="queueclear"/>
+					<action function="cmd">
+					  echo "lol" > /tmp/remtrebledata
+					  echo "/tissot_manager/installer.sh" > /tmp/flash_proxy_command
+					</action>
+					<action function="set">tw_filename=/tissot_manager/flash_proxy.zip</action>
+					<action function="queuezip"/>
+					<action function="flash">flash_zip</action>
+				</actions>
+			</input>
+
+			<fill color="%accent_color%">
+				<placement x="%indent%" y="row11_y" w="%content_width%" h="input_line_width"/>
+			</fill>
+
+			<template name="keyboardtemplate"/>
+
+		<action>
+			<touch key="back"/>
+			<action function="page">tissotmanager</action>
+		</action>
+
+		<action>
+			<touch key="home"/>
+			<action function="page">main</action>
+		</action>
+
 		</page>
 
 		<page name="lock">
